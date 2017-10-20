@@ -3,9 +3,12 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
-    @blogs = Blog.all
+    #@blogs = Blog.all
     #raise
     #binding.pry
+    @q = Blog.ransack(params[:q])
+    @blogs = @q.result
+    #@blogs = Blog.search(title_eq: 'テスト１').result
   end
 
   def show

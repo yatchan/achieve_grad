@@ -1,6 +1,14 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <p><%= notice %></p>
+   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+     <p><%= notice %></p>
+   <div>
+     <%= search_form_for @q, url: :blogs do |f| %>
+     <%= f.label :title %>
+     <%= f.text_field :title_cont, placeholder: 'タイトル' %>
+     <br>
+     <%= f.submit '検索' %>
+     <% end %>
+   </div>
     <h1>レシピ一覧</h1>
     <%= link_to "レシピを投稿する", new_blog_path, class: 'btn btn-default' %>
     <% @blogs.each do |blog| %>
