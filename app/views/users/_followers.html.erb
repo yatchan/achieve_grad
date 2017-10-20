@@ -1,0 +1,9 @@
+<div class="container">
+  <% @user.followers.each do |follower| %>
+      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+        <%= profile_img(follower) %>
+        <%= follower.name %>
+        <%= render 'follow_form', user: follower %>
+      </div>
+  <% end %>
+</div>

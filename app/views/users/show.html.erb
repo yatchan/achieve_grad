@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>フォロー</h2>
+        <% @user.followed_users.each do |user| %>
+        <%= profile_img(user) %>
+        <%= user.email %>
+        <%= render 'follow_form', user: user %>
+      </div>
+<% end %>
+</div>
+
+<div class="container">
+  <h2>フォロワー</h2>
+        <% @user.followers.each do |user| %>
+        <%= profile_img(user) %>
+        <%= user.email %>
+        <%= render 'follow_form', user: user %>
+      </div>
+<% end %>
+</div>
+
