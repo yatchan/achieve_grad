@@ -67,7 +67,7 @@ class BlogsController < ApplicationController
 
   private
     def blogs_params
-      params.require(:blog).permit(:title, :content)
+        params.require(:blog).permit(:title, :content, :image, :image_cache)
     end
     # idをキーとして値を取得するメソッド
     def set_blog
