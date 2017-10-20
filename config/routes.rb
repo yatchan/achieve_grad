@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :blogs do
     resources :comments
-    post :confirm, on: :collection
+    #post :confirm, on: :collection
   end
 
   resources :contacts, only: [:new, :create] do
