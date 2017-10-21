@@ -19,7 +19,7 @@
   <% end %>
 
 <p><%= debug @user %></p>
-<% if @user.provider != "twitter" || @user.provider != "facebook" %>
+<% if @user.provider != "twitter" && @user.provider != "facebook" %>
   <div class="field">
     <% if @minimum_password_length %>
       <br />
