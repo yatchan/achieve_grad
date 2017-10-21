@@ -13,10 +13,6 @@
     <%= link_to "レシピを投稿する", new_blog_path, class: 'btn btn-default' %>
     <% @blogs.each do |blog| %>
        <div class="row">
-      <% if blog.image? %>
-        <p style="text-align: center;"><%= image_tag(blog.image, :size=>"400x400") %></p>
-      <% end %>
-
        <p>なまえ：<%= blog.user.name %></p>
         <div class="avatar">
           <%= profile_img(blog.user) %>
@@ -24,6 +20,10 @@
         <%= link_to blog_path(blog) do %>
           <h4><strong><%= blog.title %></strong></h4>
         <% end %>
+      <% if blog.image? %>
+        <p style="text-align: center;"><%= image_tag(blog.image, :size=>"400x400") %></p>
+      <% end %>
+
         <p><%= blog.content %></p>
         <% if blog.user_id == current_user.id %>
           <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
