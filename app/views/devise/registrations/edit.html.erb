@@ -20,21 +20,17 @@
 
 <% if @user.provider != "twitter" || @user.provider != "facebook" %>
   <div class="field">
-     <i>(変更しない場合は空欄にする)</i><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control",placeholder: "パスワード" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> 文字以下にする</em>
     <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control",placeholder: "パスワード" %>
+     <i>(変更しない場合は空欄にする)</i>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control",placeholder: "パスワード" %>
   </div>
 
   <div class="field">
     <i>(確認用)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off",class: "form-control" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control",placeholder: "パスワード" %>
   </div>
 
 
