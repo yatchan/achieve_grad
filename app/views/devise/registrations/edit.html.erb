@@ -18,7 +18,6 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-<p><%= debug @user %></p>
 <% if @user.provider != "twitter" && @user.provider != "facebook" %>
   <div class="field">
     <% if @minimum_password_length %>
