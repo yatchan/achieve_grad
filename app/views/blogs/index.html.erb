@@ -14,7 +14,7 @@
     <% @blogs.each do |blog| %>
        <div class="row">
       <% if blog.image? %>
-        <%= image_tag(blog.image) %>
+        <p style="text-align: center;"><%= image_tag(blog.image, :size=>"400x400") %></p>
       <% end %>
 
        <p>なまえ：<%= blog.user.name %></p>
